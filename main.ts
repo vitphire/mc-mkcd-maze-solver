@@ -4,13 +4,14 @@ namespace mazes {
     //% r.defl=10
     //% o.shadow=minecraftCreatePosition
     //% expandableArgumentMode="toggle"
-    export function findBlock(block: number, o: Position, r: number = 12): Position {
+    export function findBlock(block: number, o: Position, r: number = 5): Position {
         let found = []
         for (let x = -r; x < r; x++) {
             for (let y = -r; y < r; y++) {
                 for (let z = -r; z < r; z++) {
-                    if (blocks.testForBlock(block, o.add(pos(x, y, z)))) {
-                        found.push(o)
+                    let check = o.add(pos(x, y, z))
+                    if (blocks.testForBlock(block, check)) {
+                        found.push(check)
                     }
                 }
             }
