@@ -9,7 +9,7 @@ namespace mazes {
         for (let x = -r; x < r; x++) {
             for (let y = -r; y < r; y++) {
                 for (let z = -r; z < r; z++) {
-                    if (blocks.testForBlock(block, o.add(pos(x,y,z)))) {
+                    if (blocks.testForBlock(block, o.add(pos(x, y, z)))) {
                         found.push(o)
                     }
                 }
@@ -19,4 +19,3 @@ namespace mazes {
         return o
     }
 }
-agent.teleport(mazes.findBlock(GRASS, agent.getPosition()), WEST)
